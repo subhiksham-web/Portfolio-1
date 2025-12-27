@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subhiksha M - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5dc;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #ffffff;
+            z-index: 1000;
+            border-bottom: 2px solid #1a1a1a;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #666;
+        }
+
+        /* Sections */
+        section {
+            min-height: 100vh;
+            padding: 5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+        }
+
+        .profile-circle {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 2rem;
+            border-radius: 50%;
+            border: 3px solid #1a1a1a;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .profile-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            color: #444;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: #1a1a1a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #ffffff;
+            transition: background 0.3s;
+            font-weight: bold;
+        }
+
+        .social-links a:hover {
+            background: #333;
+        }
+
+        /* About Section */
+        #about {
+            background: #ffffff;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .card {
+            background: #f5f5dc;
+            padding: 2rem;
+            border-radius: 0;
+            border: 2px solid #1a1a1a;
+        }
+
+        .card h3 {
+            color: #1a1a1a;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card ul li {
+            padding: 0.5rem 0;
+            color: #333;
+        }
+
+        /* Projects Section */
+        .project-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 0;
+            border: 2px solid #1a1a1a;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .project-card p {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: #1a1a1a;
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Skills Section */
+        #skills {
+            background: #ffffff;
+        }
+
+        .skill-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .skill-dots {
+            color: #1a1a1a;
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 0;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #1a1a1a;
+            color: #ffffff;
+            border: 2px solid #1a1a1a;
+        }
+
+        .btn-primary:hover {
+            background: #ffffff;
+            color: #1a1a1a;
+        }
+
+        .btn-secondary {
+            background: #ffffff;
+            border: 2px solid #1a1a1a;
+            color: #1a1a1a;
+        }
+
+        .btn-secondary:hover {
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            border-top: 2px solid #1a1a1a;
+            padding: 2rem;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">SM</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="hero">
+            <div class="profile-circle">
+                <img src="profile.jpg" alt="Subhiksha M">
+            </div>
+            <h1>Subhiksha M</h1>
+            <p class="subtitle">AI & Data Science Student | Aspiring AI Software Engineer</p>
+            <p class="description">
+                AIDS Department | Creating real-world impact through AI, AR/VR simulations, and data-driven solutions
+            </p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/subhiksha-m-686122355/" target="_blank" title="LinkedIn">in</a>
+                <a href="mailto:subhiksha.ad24@bitsathy.ac.in" title="Email">@</a>
+                <a href="https://github.com/subhiksha-m" target="_blank" title="GitHub">gh</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>Education & Goals</h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">B.Tech in AI & Data Science</p>
+                    <p style="color: #666; margin-bottom: 1rem;">AIDS Department Student</p>
+                    <p style="margin-top: 1rem;">
+                        <strong>Target Companies:</strong><br>
+                        Amazon, Google, Microsoft, Zoho, Wipro
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        <strong>Career Goal:</strong> AI Software Engineer, Data Analyst, Data Scientist
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Achievements</h3>
+                    <ul>
+                        <li>• 200+ coding problems solved</li>
+                        <li>• Smart India Hackathon participant</li>
+                        <li>• Sprintathon participant</li>
+                        <li>• AR/VR simulation development</li>
+                        <li>• Team leadership in hackathons</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card" style="margin-top: 2rem;">
+                <h3>Research & Interests</h3>
+                <div class="grid grid-3">
+                    <div>
+                        <p style="font-weight: bold; margin-bottom: 0.5rem;">AR/VR Simulations</p>
+                        <p style="font-size: 0.9rem; color: #666;">Unity & Unreal Engine for immersive training</p>
+                    </div>
+                    <div>
+                        <p style="font-weight: bold; margin-bottom: 0.5rem;">Artificial Intelligence</p>
+                        <p style="font-size: 0.9rem; color: #666;">AI solutions with ethical considerations</p>
+                    </div>
+                    <div>
+                        <p style="font-weight: bold; margin-bottom: 0.5rem;">Data Science</p>
+                        <p style="font-size: 0.9rem; color: #666;">Data analysis for real-world impact</p>
+                    </div>
+                </div>
+                <p style="margin-top: 1.5rem; font-style: italic; color: #333;">
+                    "Learning by doing, growing by building, and succeeding by never giving up!"
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="grid grid-2">
+                <div class="project-card">
+                    <h3>AR/VR Disaster Management Simulation</h3>
+                    <p>
+                        Built immersive disaster scenarios including wildfires, cyclones, and earthquakes using Unity and Unreal Engine. Correlated simulation data with mock physical testing and reduced simulation-to-reality error from 15% to 6% through parameter tuning and behavior refinement.
+                    </p>
+                    <p><strong>Impact:</strong> Improved safety training scalability and cost efficiency compared to traditional drills</p>
+                    <div class="tags">
+                        <span class="tag">Unity</span>
+                        <span class="tag">Unreal Engine</span>
+                        <span class="tag">AR/VR</span>
+                        <span class="tag">Simulation</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Hackathon Projects</h3>
+                    <p>
+                        Participated in Smart India Hackathon (SIH) and Sprintathon, leading teams through problem-solving and technical execution. Efficiently used free datasets and open-source tools to build functional prototypes with high accuracy.
+                    </p>
+                    <p><strong>Outcome:</strong> Strong learning outcomes with minimal costs, achieving high ROI</p>
+                    <div class="tags">
+                        <span class="tag">Team Leadership</span>
+                        <span class="tag">Rapid Prototyping</span>
+                        <span class="tag">Open Source</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-bar">
+                        <span>Python</span>
+                        <span class="skill-dots">●●●●●</span>
+                    </div>
+                    <div class="skill-bar">
+                        <span>Java</span>
+                        <span class="skill-dots">●●●●○</span>
+                    </div>
+                    <div class="skill-bar">
+                        <span>C</span>
+                        <span class="skill-dots">●●●○○</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>AR/VR & Game Development</h3>
+                    <ul>
+                        <li>Unity Engine</li>
+                        <li>Unreal Engine</li>
+                        <li>AR/VR Simulation</li>
+                        <li>3D Development</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>AI & Data Science</h3>
+                    <ul>
+                        <li>Artificial Intelligence</li>
+                        <li>Data Analysis</li>
+                        <li>Model Development</li>
+                        <li>Data Science</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="grid grid-2" style="margin-top: 2rem;">
+                <div class="card">
+                    <h3>Tools & Platforms</h3>
+                    <ul>
+                        <li>GitHub & Version Control</li>
+                        <li>ChatGPT & Perplexity</li>
+                        <li>Hardware-Aware Programming</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Systems Awareness</h3>
+                    <ul>
+                        <li>Memory Management (RAM/VRAM)</li>
+                        <li>Execution Time (Latency)</li>
+                        <li>Power Efficiency</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container contact">
+            <h2>Let's Connect</h2>
+            <p>
+                Open to internships, research roles, and project-based learning opportunities!<br>
+                Let's collaborate on AI, AR/VR, or data science projects.
+            </p>
+            <div class="contact-buttons">
+                <a href="mailto:subhiksha.ad24@bitsathy.ac.in" class="btn btn-primary">Send Email</a>
+                <a href="https://www.linkedin.com/in/subhiksha-m-686122355/" target="_blank" class="btn btn-secondary">LinkedIn Profile</a>
+                <a href="https://github.com/subhiksha-m" target="_blank" class="btn btn-secondary">GitHub Profile</a>
+            </div>
+            <p style="margin-top: 2rem; font-size: 1rem;">
+                Phone: 7376242AD315
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Subhiksha M | AIDS Department</p>
+        <p style="margin-top: 0.5rem; font-style: italic;">Coding today, innovating tomorrow</p>
+    </footer>
+</body>
+</html>
